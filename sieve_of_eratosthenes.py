@@ -1,7 +1,7 @@
 import numpy as np
 import time as tm
 
-def sieve_of_eratosthenes(n : int) -> list:
+def sieve_of_eratosthenes(n : int) -> list[int]:
     """ Find all prime numbers between 2 and a number n
     Intended to be O(n*log(log n))
     Source: https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
@@ -20,8 +20,8 @@ def sieve_of_eratosthenes(n : int) -> list:
     
     return [idx for idx, val in enumerate(consecutive_numbers) if val and idx >= 2]
 
-n = input('N: ')
-start = tm.perf_counter_ns()
-primes = sieve_of_eratosthenes(n)
-end = tm.perf_counter_ns()
-print(primes, "\nSize: ", len(primes), 'Elapsed: ', end - start)
+n : int = int(input('N: '))
+start : int = tm.perf_counter_ns()
+primes : list[int] = sieve_of_eratosthenes(n)
+end : int = tm.perf_counter_ns()
+print(f"{primes} \nSize: {len(primes)} \nTime elapsed: {end - start}ns")
