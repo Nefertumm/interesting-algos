@@ -13,7 +13,7 @@ def load_location_data(graph: Graph, filename: str) -> None:
     """
     with open(filename, 'r') as file:
         for line in file:
-            v_k, x, y : str = line.rstrip('\n').split(',')
+            v_k, x, y = line.rstrip('\n').split(',')
             vertex : Vertex = graph.get_vertex(v_k)
             vertex.location = (float(x), float(y))
 
