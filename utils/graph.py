@@ -46,6 +46,8 @@ class Vertex:
         # the coordinates of that city, and to calculate the heuristic you could use the distance between them.
         # The same could work with a grid for a videogame too.
         self._location : Location = None
+        # If we have the heuristics pre-calculated, we could use it as well
+        self._heuristic : float|int = 0
     
     def add_neighbor(self, neighbor : Any , weight : int = 0):
         """
@@ -107,6 +109,14 @@ class Vertex:
     @location.setter
     def location(self, new_location : Location) -> None:
         self._location = new_location
+        
+    @property
+    def heuristic(self) -> float|int:
+        return self._heuristic
+    
+    @heuristic.setter
+    def heuristic(self, new_heuristic : float|int) -> None:
+        self._heuristic = new_heuristic
         
     def get_weight(self, neighbor : Any) -> int:
         """
